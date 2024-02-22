@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de datos de alumnos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Alumnos</h1>
+
+        <!-- Formulario para dar de alta un alumno -->
+        <div class="form-container">
+            <h2>Alta de Alumno</h2>
+            <form id="altaAlumnoForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" required>
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" required>
+                <button type="submit">Agregar Alumno</button>
+            </form>
+        </div>
+
+        <!-- Formulario para asignar calificaciones -->
+        <div class="form-container">
+            <h2>Asignar Calificaciones</h2>
+            <form id="calificacionesForm">
+                <label for="alumno">Seleccionar Alumno:</label>
+                <select id="alumno">
+                    <!-- Opciones de alumnos se generan dinámicamente con JS -->
+                </select>
+                <label for="materia">Materia:</label>
+                <input type="text" id="materia" required>
+                <label for="calificacion">Calificación:</label>
+                <input type="number" id="calificacion" min="0" max="100" required>
+                <button type="submit">Asignar Calificación</button>
+            </form>
+        </div>
+
+        <!-- Botones para otras funciones -->
+        <div class="buttons-container">
+            <button onclick="buscarPorNombre()">Buscar por Nombre</button>
+            <button onclick="buscarPorApellido()">Buscar por Apellido</button>
+            <button onclick="obtenerPromedioAlumno()">Promedio Alumno</button>
+            <button onclick="obtenerPromedioGrupo()">Promedio Grupo</button>
+            <button onclick="ordenarAscendente()">Ordenar Ascendente</button>
+            <button onclick="ordenarDescendente()">Ordenar Descendente</button>
+        </div>
+
+        <!-- Resultado de funciones -->
+        <div id="resultado" class="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
